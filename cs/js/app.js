@@ -2,7 +2,7 @@ var main = function(){
 
 	//Slide images when start
 
-	var slide = setInterval(function(){nextSlide()}, 9000);
+	var slide = setInterval(function(){nextSlide()}, 5000);
 	
 	//Build function next slider
 	
@@ -14,8 +14,8 @@ var main = function(){
 			nextSlide = $('.slide').first();
 		};
 		
-		currentSlide.fadeOut(3000).removeClass('active-slide');
-		nextSlide.fadeIn(3000).addClass('active-slide');
+		currentSlide.fadeOut(1000).removeClass('active-slide');
+		nextSlide.fadeIn(1000).addClass('active-slide');
 		
 		var currentDot = $('.active-dot');
 		var nextDot = currentDot.next();

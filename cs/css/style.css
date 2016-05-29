@@ -29,8 +29,38 @@ button {
 	width: 100%;
 	font-size: 18px;
 }
+button:hover {
+	background-color: #ccc;
+}
+.row-grid-image {
+	padding: 0 5px;
+}
 .container {
 	width: 960px;
+}
+.gallery a,
+.tool-item a,
+.community a {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+.gallery img,
+.tool-item img,
+.community img {
+	display: block;
+	width: 100%;
+}
+.gallery,
+.tool-item,
+.story-list {
+	padding: 0 10px;
+}
+
+.tool-item:hover h4,
+.story-list:hover h4 {
+	color: #ccc;
 }
 
 /* Navigation */
@@ -94,7 +124,15 @@ header {
 .sign li a {
 	text-decoration: none;
 	color: white;
-	padding: 10px 13px;
+	padding: 7px 13px;
+	border-radius: 3px;
+}
+.sign li a:hover {
+	background-color: #f66522;
+
+}
+.signup {
+	border: 1px solid #f66522;
 }
 
 /* Focus in header */
@@ -104,11 +142,12 @@ header {
 	text-align: center;
 	font-size: 18px;
 	position: absolute;
-	top: 60px;
+	top: 220px;
+	margin-top: -90px;
 	color: #fff;
 }
 .focus h1 {
-	font-size: 64px;
+	font-size: 54px;
 	margin: 0;
 }
 .focus p {
@@ -119,16 +158,17 @@ header {
 	display: inline;
 	vertical-align: bottom;
 	border: none;
+	border-radius: 3px;
 }
 .search_text {
 	width: 46.9%;
-	height: 45px;
-	color: #878888;
-	padding: 10px 0 10px 15px;
+	height: 50px;
+	color: #777;
+	padding: 15px 0 15px 15px;
 }
 .search_btn {
-	width: 45px;
-	height: 45px;
+	width: 50px;
+	height: 50px;
 	background-color: #f34421;
 	background-image: url(../images/search.png);
 }
@@ -136,7 +176,7 @@ header {
 /* Carousel */
 
 .carousel {
-	display: relative;
+	position: relative;
 }
 .slide {
 	width: 100%;
@@ -150,15 +190,19 @@ header {
 
 /* Slide navigation button */
 .narrows {
+	display: inline-block;
 	position: absolute;
-	top: 250px;
-	width: 100%;
+	top: 275px;
+	margin-top: -32px;
+	z-index: 10000;
 }
 .narrow-next {
-	margin-right: 35px;
+	/*margin-right: 35px;*/
+	right: 35px;
 }
 .narrow-prev {
-	margin-left: 35px;
+	/*margin-left: 35px;*/
+	left: 35px;
 }
 .slide-dots {
 	position: absolute;
@@ -183,9 +227,10 @@ header {
 }
 .gallery {
 	margin-bottom: 20px;
-	padding: 0 10px;
-	position: relative;
 	overflow: hidden;
+}
+.gallery img {
+	display: inline-block;
 }
 .gallery h3 {
 	position: absolute;
@@ -196,61 +241,21 @@ header {
 	width: 100%;
 	text-align: center;
 }
-.darkness-col-8 {
-	width: 620px;
+.darkness-col-8,
+.darkness-col-4 {
+	width: 100%;
 	height: 100%;
 	background-image: url(../images/bg-black.png);
 	position: absolute;
 	top: 0;
-	left: 10px;
-	display: none;
+	left: 0;
+	opacity: 0;
+	transition: all .3s ease .15s;
 }
-.gallery a:hover .darkness-col-8{
-	display: block;
-}.darkness-col-4 {
-	width: 300px;
-	height: 100%;
-	background-image: url(../images/bg-black.png);
-	position: absolute;
-	top: 0;
-	left: 10px;
-	display: none;
+.gallery a:hover .darkness-col-8,
+.gallery a:hover .darkness-col-4 {
+	opacity: 1;
 }
-.gallery a:hover .darkness-col-4{
-	display: block;
-}
-
-/*.gallery a{
-	text-decoration: none;
-}
-.gallery h3 {
-	line-height: 300px;
-}
-.gallery a:hover h3 {
-	background-image: url(../images/bg-black.png);
-}
-.fav-01 {
-	background-image: url(../images/Mu_cang_chai.png);
-	background-repeat: no-repeat;
-}
-.fav-02 {
-	background-image: url(../images/Dien_bien.png);
-}
-.fav-11 {
-	background-image: url(../images/An_giang.png);
-}
-.fav-12 {
-	background-image: url(../images/Tay_nguyen.png);
-}
-.fav-13 {
-	background-image: url(../images/My_Tho.png);
-}
-.fav-21 {
-	background-image: url(../images/Ca_mau.png);
-}
-.fav-22 {
-	background-image: url(../images/Dao_ly_son.png);
-}*/
 
 /* Destination */
 
@@ -267,6 +272,9 @@ header {
 	color: #f66522;
 	line-height: 30px;
 }
+.destination a:hover {
+	text-decoration: underline;
+}
 
  /* Tools */
  
@@ -277,13 +285,12 @@ header {
 	-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 			box-sizing: border-box;
-	padding:0 10px;
 	position: relative;
  }
  .tool-item h4 {
 	line-height: 52px;
 	background-image: url(../images/bg.png);
-	width: 220px;
+	width: 100%;
 	position: absolute;
 	bottom: 0;
 	margin: 0;
@@ -301,13 +308,12 @@ header {
 	-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 			box-sizing: border-box;
-	padding: 0 10px;
 	position: relative;
 }
 .story-list h4 {
 	line-height: 62px;
 	background-image: url(../images/bg.png);
-	width: 290px;
+	width: 100%;
 	position: absolute;
 	bottom: 0;
 	margin: 0;

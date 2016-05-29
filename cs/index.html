@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Phuot Template</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--[if lt IE 9]>
-		<script src="js/html5shiv.js"></script>
-		<![endif]-->
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/respond.min.js"></script>
+<head>
+	<title>Nao ta cung phuot</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+	<link rel="icon" 
+      type="image/png" 
+      href="./images/favicon.png">
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/respond.min.js"></script>
 	</head>
 	<body>
 		<nav class="container-fruid">
@@ -29,10 +32,10 @@
 						<img class="slide" src="images/slide_03.jpg" />
 						<img class="slide" src="images/slide_04.jpg" />
 					</section>
-					<section class="narrows">
-						<a class="narrow-prev pull-left" href="#"><img src="images/btn_prev.png" /></a>
-						<a class="narrow-next pull-right" href="#"><img src="images/btn_next.png" /></a>
-					</section>
+
+					<a class="narrows narrow-prev" href="JavaScript:void(0)"><img src="images/mega_arrows_prev.png" /></a>
+					<a class="narrows narrow-next" href="JavaScript:void(0)"><img src="images/mega_arrows_next.png" /></a>
+
 					<ul class="slide-dots">
 						<li class="dot active-dot"></li>
 						<li class="dot"></li>
@@ -43,14 +46,14 @@
 				<section class="sign">
 					<ul>
 						<li><a href="#">Đăng nhập</a></li>
-						<li><a href="#">Đăng ký</a></li>
+						<li><a class="signup" href="#">Đăng ký</a></li>
 					</ul>
 				</section>
 				<section class="focus">
 					<h1>Nào ta cùng "Phượt"</h1>
 					<p>Cung cấp thông tin của hơn 100 địa điểm "Phượt". Hơn 5 triệu thành viên đã tham gia ...</p>
 					<form>
-						<input class="search search_text" type="text" name="search_text" value="Nơi bạn muốn đến?" />
+						<input class="search search_text" type="text" name="search_text" placeholder="Nơi bạn muốn đến?" />
 						<input class="search search_btn" type="button" name="search_btn" />
 					</form>
 				</section>
@@ -60,61 +63,61 @@
 			<section class="favourite">
 				<section class="container">
 					<h2>Đích đến ưa thích</h2>
-						<section class="row">
-							<section class="col-lg-8 gallery">
-								<a href="#">
-									<img src="images/Mu_cang_chai.png" />
-									<h3>Mù Căng Chải</h3>
-									<span class="darkness-col-8"></span>
-								</a>
-							</section>
-							<section class="col-lg-4 gallery">
-								<a href="#">
-									<img src="images/Dien_bien.png" />
-									<h3>Điện biên</h3>
-									<span class="darkness-col-4"></span>
-								</a>
-							</section>
+					<section class="row row-grid-image">
+						<section class="col-lg-8 gallery">
+							<a href="JavaScript:void(0)">
+								<img src="images/Mu_cang_chai.png" />
+								<h3>Mù Căng Chải</h3>
+								<span class="darkness-col-8"></span>
+							</a>
 						</section>
-						<section class="row">
-							<section class="col-lg-4 gallery">
-								<a href="#">
-									<img src="images/An_giang.png" />
-									<h3>An Giang</h3>
-									<span class="darkness-col-4"></span>
-								</a>
-							</section>
-							<section class="col-lg-4 gallery">
-								<a href="#">
-									<img src="images/Tay_nguyen.png" />
-									<h3>Tây Nguyên</h3>
-									<span class="darkness-col-4"></span>
-								</a>
-							</section>
-							<section class="col-lg-4 gallery">
-								<a href="#">
-									<img src="images/My_tho.png" />
-									<h3>Mỹ Tho</h3>
-									<span class="darkness-col-4"></span>
-								</a>
-							</section>
+						<section class="col-lg-4 gallery">
+							<a href="JavaScript:void(0)">
+								<img src="images/Dien_bien.png" />
+								<h3>Điện biên</h3>
+								<span class="darkness-col-4"></span>
+							</a>
 						</section>
-						<section class="row">
-							<section class="col-lg-4 gallery">
-								<a href="#">
-									<img src="images/Ca_mau.png" />
-									<h3>Cà Mau</h3>
-									<span class="darkness-col-4"></span>
-								</a>
-							</section>
-							<section class="col-lg-8 gallery">
-								<a href="#">
-									<img src="images/Dao_ly_son.png" />
-									<h3>Đảo Lý Sơn</h3>
-									<span class="darkness-col-8"></span>										
-								</a>
-							</section>
+					</section>
+					<section class="row row-grid-image">
+						<section class="col-lg-4 gallery">
+							<a href="JavaScript:void(0)">
+								<img src="images/An_giang.png" />
+								<h3>An Giang</h3>
+								<span class="darkness-col-4"></span>
+							</a>
 						</section>
+						<section class="col-lg-4 gallery">
+							<a href="JavaScript:void(0)">
+								<img src="images/Tay_nguyen.png" />
+								<h3>Tây Nguyên</h3>
+								<span class="darkness-col-4"></span>
+							</a>
+						</section>
+						<section class="col-lg-4 gallery">
+							<a href="JavaScript:void(0)">
+								<img src="images/My_tho.png" />
+								<h3>Mỹ Tho</h3>
+								<span class="darkness-col-4"></span>
+							</a>
+						</section>
+					</section>
+					<section class="row row-grid-image">
+						<section class="col-lg-4 gallery">
+							<a href="JavaScript:void(0)">
+								<img src="images/Ca_mau.png" />
+								<h3>Cà Mau</h3>
+								<span class="darkness-col-4"></span>
+							</a>
+						</section>
+						<section class="col-lg-8 gallery">
+							<a href="JavaScript:void(0)">
+								<img src="images/Dao_ly_son.png" />
+								<h3>Đảo Lý Sơn</h3>
+								<span class="darkness-col-8"></span>										
+							</a>
+						</section>
+					</section>
 					<button>Hiển thị thêm</button>
 				</section>
 			</section>
@@ -124,38 +127,38 @@
 					<section class="row">
 						<section class="col-lg-3">
 							<ul>
-								<li><a href="#">Hà Nội</a></li>
-								<li><a href="#">Sapa</a></li>
-								<li><a href="#">Mù Căng Chải</a></li>
-								<li><a href="#">Mộc Châu</a></li>
-								<li><a href="#">Lào Cai</a></li>
+								<li><a href="JavaScript:void(0)">Hà Nội</a></li>
+								<li><a href="JavaScript:void(0)">Sapa</a></li>
+								<li><a href="JavaScript:void(0)">Mù Căng Chải</a></li>
+								<li><a href="JavaScript:void(0)">Mộc Châu</a></li>
+								<li><a href="JavaScript:void(0)">Lào Cai</a></li>
 							</ul>
 						</section>
 						<section class="col-lg-3">
 							<ul>
-								<li><a href="#">Đà Nẵng</a></li>
-								<li><a href="#">Quảng Nam</a></li>
-								<li><a href="#">Huế</a></li>
-								<li><a href="#">Vinh</a></li>
-								<li><a href="#">Thanh Hóa</a></li>
+								<li><a href="JavaScript:void(0)">Đà Nẵng</a></li>
+								<li><a href="JavaScript:void(0)">Quảng Nam</a></li>
+								<li><a href="JavaScript:void(0)">Huế</a></li>
+								<li><a href="JavaScript:void(0)">Vinh</a></li>
+								<li><a href="JavaScript:void(0)">Thanh Hóa</a></li>
 							</ul>
 						</section>
 						<section class="col-lg-3">
 							<ul>
-								<li><a href="#">Tây Nguyên</a></li>
-								<li><a href="#">Đà Lạt</a></li>
-								<li><a href="#">Buôn Mê Thuật</a></li>
-								<li><a href="#">Gia Lai</a></li>
-								<li><a href="#">Kon Tum</a></li>
+								<li><a href="JavaScript:void(0)">Tây Nguyên</a></li>
+								<li><a href="JavaScript:void(0)">Đà Lạt</a></li>
+								<li><a href="JavaScript:void(0)">Buôn Mê Thuật</a></li>
+								<li><a href="JavaScript:void(0)">Gia Lai</a></li>
+								<li><a href="JavaScript:void(0)">Kon Tum</a></li>
 							</ul>
 						</section>
 						<section class="col-lg-3">
 							<ul>
-								<li><a href="#">Hồ Chí Minh</a></li>
-								<li><a href="#">Nha Trang</a></li>
-								<li><a href="#">An Giang</a></li>
-								<li><a href="#">Cần Thơ</a></li>
-								<li><a href="#">Cà Mau</a></li>
+								<li><a href="JavaScript:void(0)">Hồ Chí Minh</a></li>
+								<li><a href="JavaScript:void(0)">Nha Trang</a></li>
+								<li><a href="JavaScript:void(0)">An Giang</a></li>
+								<li><a href="JavaScript:void(0)">Cần Thơ</a></li>
+								<li><a href="JavaScript:void(0)">Cà Mau</a></li>
 							</ul>
 						</section>
 					</section>
@@ -165,27 +168,27 @@
 			<section id="tools" class="tools">
 				<section class="container">
 					<h2>Hành trang</h2>
-					<section class="row">
+					<section class="row row-grid-image">
 						<section class="col-lg-3 tool-item">
-							<a href="#">
+							<a href="JavaScript:void(0)">
 								<img src="images/Tool_01.png" />
 								<h4>Đồ dùng thiết yếu</h4>
 							</a>
 						</section>
 						<section class="col-lg-3 tool-item">
-							<a href="#">
+							<a href="JavaScript:void(0)">
 								<img src="images/Tool_02.png" />
 								<h4>Đồ chuyên dụng</h4>
 							</a>
 						</section>
 						<section class="col-lg-3 tool-item">
-							<a href="#">
+							<a href="JavaScript:void(0)">
 								<img src="images/Tool_03.png" />
 								<h4>Kỹ năng</h4>
 							</a>
 						</section>
 						<section class="col-lg-3 tool-item">
-							<a href="#">
+							<a href="JavaScript:void(0)">
 								<img src="images/Tool_04.png" />
 								<h4>Danh sách cửa hàng</h4>
 							</a>
@@ -196,26 +199,29 @@
 			<section id="community" class="community">
 				<section class="container">
 					<h2>Cộng đồng</h2>
-					<section class="col-lg-4 story-list">
-						<a href="#">
-							<img src="images/Story_01.png" />
-							<h4>Những khoảnh khắc ấn tượng</h4>
-						</a>
-					</section>
-					<section class="col-lg-4 story-list">
-						<a href="#">
-							<img src="images/Story_02.png" />
-							<h4>Tình bạn và "Phượt"</h4>
-						</a>
-					</section>
-					<section class="col-lg-4 story-list">
-						<a href="#">
-							<img src="images/Story_03.png" />
-							<h4>Ẩm thực miền tây</h4>
-						</a>
-					</section>
+					<div class="row row-grid-image">
+						<section class="col-lg-4 story-list">
+							<a href="JavaScript:void(0)">
+								<img src="images/Story_01.png" />
+								<h4>Những khoảnh khắc ấn tượng</h4>
+							</a>
+						</section>
+						<section class="col-lg-4 story-list">
+							<a href="JavaScript:void(0)">
+								<img src="images/Story_02.png" />
+								<h4>Tình bạn và "Phượt"</h4>
+							</a>
+						</section>
+						<section class="col-lg-4 story-list">
+							<a href="JavaScript:void(0)">
+								<img src="images/Story_03.png" />
+								<h4>Ẩm thực miền tây</h4>
+							</a>
+						</section>
+					</div>
 					<button>Hiển thị thêm</button>
 				</section>
+
 			</section>
 		</section>
 		<footer>
@@ -224,29 +230,29 @@
 					<section class="col-lg-4 learn-more">
 						<h2>Thông tin</h2>
 						<ul>
-							<li><a href="#">Mục đích</a></li>
-							<li><a href="#">Về chúng tôi</a></li>
-							<li><a href="#">Liên hệ</a></li>
-							<li><a href="#">Nội quy</a></li>
-							<li><a href="#">Trợ giúp</a></li>
+							<li><a href="JavaScript:void(0)">Mục đích</a></li>
+							<li><a href="JavaScript:void(0)">Về chúng tôi</a></li>
+							<li><a href="JavaScript:void(0)">Liên hệ</a></li>
+							<li><a href="JavaScript:void(0)">Nội quy</a></li>
+							<li><a href="JavaScript:void(0)">Trợ giúp</a></li>
 						</ul>
 					</section>
 					<section class="col-lg-4 learn-more">
 						<h2>Liên kết</h2>
 						<ul>
-							<li><a href="#">Phượt.vn</a></li>
-							<li><a href="#">Cungphuot.info</a></li>
-							<li><a href="#">Toidi.net</a></li>
-							<li><a href="#">Nhomphuot.com</a></li>
-							<li><a href="#">Cungphuot.vn</a></li>
+							<li><a href="JavaScript:void(0)">Phượt.vn</a></li>
+							<li><a href="JavaScript:void(0)">Cungphuot.info</a></li>
+							<li><a href="JavaScript:void(0)">Toidi.net</a></li>
+							<li><a href="JavaScript:void(0)">Nhomphuot.com</a></li>
+							<li><a href="JavaScript:void(0)">Cungphuot.vn</a></li>
 						</ul>
 					</section>
 					<section class="col-lg-4 learn-more social">
 						<h2>Theo dõi chúng tôi</h2>
 						<ul>
-							<li><a href="#"><img src="images/facebook.png" /></a></li>
-							<li><a href="#"><img src="images/google.png" /></a></li>
-							<li><a href="#"><img src="images/twitter.png" /></a></li>
+							<li><a href="JavaScript:void(0)"><img src="images/facebook.png" /></a></li>
+							<li><a href="JavaScript:void(0)"><img src="images/google.png" /></a></li>
+							<li><a href="JavaScript:void(0)"><img src="images/twitter.png" /></a></li>
 						</ul>
 					</section>
 				</section>
@@ -258,4 +264,4 @@
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/app.js"></script>
 	</body>
-</html>
+	</html>
