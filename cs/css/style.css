@@ -1,0 +1,349 @@
+/* General */
+body {
+	background-color: #f8f8f8;
+	font-family: verdana, sans-serif, arial;
+	font-size: 14px;
+	color: #292929;
+}
+h2 {
+	font-size: 36px;
+	margin: 35px 0;
+}
+h3 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	margin: 0;
+}
+h4 {
+	font-size: 18px;
+	color: #fff;
+}
+ul {
+	margin: 0;
+}
+button {
+	border: none;
+	background-color: #e3e2e2;
+	height: 60px;
+	width: 100%;
+	font-size: 18px;
+}
+.container {
+	width: 960px;
+}
+
+/* Navigation */
+
+nav {
+	background-color: #fff;
+	height: 102px;
+}
+
+.logo {
+	margin: 4px 0 0 30px;
+}
+.menu {
+	margin: 52px 42px 0;
+}
+.menu li {
+	display: inline;
+	padding: 17px 0;
+}
+.menu li a{
+	padding: 17px 20px;
+	line-height: 50px;
+	text-decoration: none;
+	color: #8e8d8d;
+}
+.menu li:hover {
+	background-color: #000;
+}
+.menu li:hover a{
+	color: #fff;
+}
+.menu li:first-child {
+	background-color: #000;
+}
+.menu li:first-child a{
+	color: #fff;
+}
+
+/* Header */
+
+header {
+	height: 550px;
+	overflow: hidden;
+	background-color: #9e9d9d;
+}
+
+/* Signup menu */
+
+.sign {
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+.sign ul {
+	text-align: right;	
+	margin: 15px 50px 0;
+}
+.sign li {
+	display: inline;
+}
+.sign li a {
+	text-decoration: none;
+	color: white;
+	padding: 10px 13px;
+}
+
+/* Focus in header */
+
+.focus {
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	position: absolute;
+	top: 60px;
+	color: #fff;
+}
+.focus h1 {
+	font-size: 64px;
+	margin: 0;
+}
+.focus p {
+	font-size: 18px;
+	margin: 10px 0 15px 0;
+}
+.search {
+	display: inline;
+	vertical-align: bottom;
+	border: none;
+}
+.search_text {
+	width: 46.9%;
+	height: 45px;
+	color: #878888;
+	padding: 10px 0 10px 15px;
+}
+.search_btn {
+	width: 45px;
+	height: 45px;
+	background-color: #f34421;
+	background-image: url(../images/search.png);
+}
+
+/* Carousel */
+
+.carousel {
+	display: relative;
+}
+.slide {
+	width: 100%;
+	height: 550px;
+	display: none;
+}
+.active-slide {
+	display: block;
+}
+
+
+/* Slide navigation button */
+.narrows {
+	position: absolute;
+	top: 250px;
+	width: 100%;
+}
+.narrow-next {
+	margin-right: 35px;
+}
+.narrow-prev {
+	margin-left: 35px;
+}
+.slide-dots {
+	position: absolute;
+	top: 477px;
+	width: 100%;
+	text-align: center;
+}
+.dot {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-image: url(../images/dot.png);
+}
+.active-dot {
+	background-image: url(../images/dot-act.png);
+}
+
+/* Favourite destinations */
+
+.favourite {
+	text-align: center;
+}
+.gallery {
+	margin-bottom: 20px;
+	padding: 0 10px;
+	position: relative;
+	overflow: hidden;
+}
+.gallery h3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	line-height: 300px;
+	width: 100%;
+	text-align: center;
+}
+.darkness-col-8 {
+	width: 620px;
+	height: 100%;
+	background-image: url(../images/bg-black.png);
+	position: absolute;
+	top: 0;
+	left: 10px;
+	display: none;
+}
+.gallery a:hover .darkness-col-8{
+	display: block;
+}.darkness-col-4 {
+	width: 300px;
+	height: 100%;
+	background-image: url(../images/bg-black.png);
+	position: absolute;
+	top: 0;
+	left: 10px;
+	display: none;
+}
+.gallery a:hover .darkness-col-4{
+	display: block;
+}
+
+/*.gallery a{
+	text-decoration: none;
+}
+.gallery h3 {
+	line-height: 300px;
+}
+.gallery a:hover h3 {
+	background-image: url(../images/bg-black.png);
+}
+.fav-01 {
+	background-image: url(../images/Mu_cang_chai.png);
+	background-repeat: no-repeat;
+}
+.fav-02 {
+	background-image: url(../images/Dien_bien.png);
+}
+.fav-11 {
+	background-image: url(../images/An_giang.png);
+}
+.fav-12 {
+	background-image: url(../images/Tay_nguyen.png);
+}
+.fav-13 {
+	background-image: url(../images/My_Tho.png);
+}
+.fav-21 {
+	background-image: url(../images/Ca_mau.png);
+}
+.fav-22 {
+	background-image: url(../images/Dao_ly_son.png);
+}*/
+
+/* Destination */
+
+.destination {
+	text-align: center;
+}
+.destination ul {
+	text-align: left;
+	margin-bottom: 25px;
+	padding-left: 33px;
+}
+.destination a {
+	text-decoration: none;
+	color: #f66522;
+	line-height: 30px;
+}
+
+ /* Tools */
+ 
+ .tools {
+	text-align: center;
+ }
+ .tool-item {
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	padding:0 10px;
+	position: relative;
+ }
+ .tool-item h4 {
+	line-height: 52px;
+	background-image: url(../images/bg.png);
+	width: 220px;
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+}
+
+/* Community */
+
+.community {
+	text-align: center;
+}
+.community button {
+	margin: 30px 0;
+}
+.story-list {
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	padding: 0 10px;
+	position: relative;
+}
+.story-list h4 {
+	line-height: 62px;
+	background-image: url(../images/bg.png);
+	width: 290px;
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+}
+
+/* Footer */
+
+footer {
+	background-color: #000a10;
+	color: #8e8d8d;
+}
+.learn-more {
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	padding-left: 30px;
+}
+footer h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+footer li a {
+	color: #8e8d8d;
+	line-height: 24px;
+	text-decoration: none;
+}
+footer li a:hover {
+	text-decoration: none;
+}
+.social li {
+	display: inline;
+	margin-right: 17px;
+}
+.signate {
+	background-color: #01111c;
+	line-height: 40px;
+	text-align: center;
+	margin-top: 45px;
+}
