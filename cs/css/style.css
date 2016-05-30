@@ -182,6 +182,20 @@ header {
 	width: 100%;
 	height: 550px;
 	display: none;
+	background-size: cover;
+	background-position: center;
+}
+.img1 {
+	background-image: url(../images/slide_01.jpg);
+}
+.img2 {
+	background-image: url(../images/slide_02.jpg);
+}
+.img3 {
+	background-image: url(../images/slide_03.jpg);
+}
+.img4 {
+	background-image: url(../images/slide_04.jpg);
 }
 .active-slide {
 	display: block;
