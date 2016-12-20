@@ -17,6 +17,10 @@ h2 {
 	font-size: 3rem;
 }
 
+p {
+	line-height: 24px;
+}
+
 a {
 	text-decoration: none;
 }
@@ -152,6 +156,7 @@ header {
 
 .section_hero p {
 	color: #bbb;
+	line-height: 30px;
 	margin-bottom: 27px;
 }
 
@@ -192,6 +197,7 @@ header {
 
 .section_services p {
 	font-size: 1.4em;
+	line-height: 30px;
 	color: #bbb;	
 }
 
@@ -236,7 +242,10 @@ header {
 	padding: 60px 0;
 }
 
-.section_clients h4,
+.section_clients h4 {
+	margin-bottom: 20px;
+}
+
 .section_clients p {
 	margin-bottom: 10px;
 }
@@ -253,6 +262,27 @@ header {
 
 .section_support {
 	padding: 60px 0;
+	position: relative;
+}
+
+.section_support .highlight_text {
+	width: 50%;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+}
+
+.section_support_2 .highlight_text {
+	top: 0;
+	left: initial;
+	right: 0;
+}
+
+.section_support .container {
+	position: relative;
 }
 
 .section_support h2 {	
@@ -310,7 +340,7 @@ header {
 
 .section_reservation {
 	background-color: rgb(51, 51, 51);
-	padding: 40px 0;
+	padding: 40px 0 50px 0;
 }
 
 .section_reservation .wine_cup,
@@ -337,7 +367,7 @@ header {
 
 footer {
 	background-color: rgb(40, 40, 40);
-	padding: 40px 0;
+	padding: 40px 0 60px 0;
 }
 
 footer p {
@@ -346,6 +376,10 @@ footer p {
 
 footer .footer_logo_wrapper {
 	margin-bottom: 10px;
+}
+
+footer .footer_logo_wrapper img {
+	width: 100%;
 }
 
 footer .footer_list_icon li {
@@ -363,9 +397,50 @@ footer .footer_list_icon a {
 	background-color: #fff;
 }
 
+@media (min-width: 768px) and (max-width: 959px) {
+	.container {
+		width: 768px;
+	}
+}
+
 @media (min-width: 768px) {
 	.list-inline li {
 		display: inline-block;
+	}
+
+	.container {
+		padding: 0 15px;
+	}
+
+	.col-offset-2 {
+		margin-left: 16.66%;
+	}
+
+	.col-offset-6 {
+		margin-left: 50%;
+	}
+
+	.col-3,
+	.col-4,
+	.col-8 {
+		float: left;
+		padding: 0 15px;
+	}
+
+	.col-6 {
+		width: 50%;		
+	}
+
+	.col-4 {
+		width: 33.33%;
+	}
+
+	.col-3 {
+		width: 25%;
+	}
+
+	.col-8 {
+		width: 66.66%;
 	}
 
 	.section_support_1 {
@@ -380,3 +455,10 @@ footer .footer_list_icon a {
 		background-position: center;
 	}
 }
+
+@media (min-width: 960px) {
+	.container {
+		width: 960px;
+	}
+}
+
