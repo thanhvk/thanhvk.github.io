@@ -74,7 +74,7 @@ a, img {
 	color: #444;
 }
 
-.unactive {
+.collapse {
 	display: none;
 }
 
@@ -444,6 +444,26 @@ footer .footer_list_icon a {
 
 	.col-8 {
 		width: 66.66%;
+	}
+
+	.navbar-header {
+		float: left;
+	}
+
+	.navbar-collapse.collapse {
+		display: block;
+	}
+
+	.navbar-collapse .navbar {
+		float: right;
+	}
+
+	.navbar-collapse li a {
+		padding: 30px 20px;
+	}
+
+	.navbar-header .hamburger {
+		display: none;
 	}
 
 	.section_support_1 {
