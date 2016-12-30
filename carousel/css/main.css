@@ -1,0 +1,123 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #47525d;
+}
+h2, p {
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 31px;
+  line-height: 1.5;
+}
+p{
+  font-size: 21px;
+  line-height: 26px;
+}
+a {
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #0071e0;
+}
+a:hover,
+a:visited,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+.benefits-carousel {
+  padding: 40px 0;
+  background: #f5f3f4;
+}
+.benefits-carousel__container {
+  font-size: 0;
+}
+.benefits-carousel__computer,
+.benefits-carousel__copy {
+  display: inline-block;
+  vertical-align: middle;
+}
+.benefits-carousel__computer {
+  position: relative;
+  right: 70px;
+  width: 50%;
+  height: 600px;
+  background: url("../img/computer-monitor-vflHvMurq.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.benefits-carousel__gradient {
+  position: relative;
+  top: 25px;
+  right: 65px;
+  width: 718px;
+  height: 397px;
+  overflow: hidden;
+  transition: background-color 1s ease;
+}
+.benefits-carousel__gradient--orange {
+  background-color: #ff9f74;
+}
+.benefits-carousel__gradient--blue {
+  background-color: #8ac5fd;
+}
+.benefits-carousel__gradient--yellow {
+  background-color: #ffe374;
+}
+.benefits-carousel__gradient--tangerine {
+  background-color: #ffc185;
+}
+.benefits-carousel__image-list {
+  position: relative;
+}
+.benefits-carousel__image-item {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.benefits-carousel__image-item img {
+ max-width: 560px;
+}
+.benefits-carousel__copy {
+  position: relative;
+  left: 70px;
+  width: 380px;
+  height: 600px;
+}
+.benefits-carousel__copy-item {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.benefits-carousel__bullet-list {
+  position: absolute;
+  bottom: 190px;
+}
+.benefits-carousel__bullet-item {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #d0d4d9;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.benefits-carousel__image-item.active,
+.benefits-carousel__copy-item.active {
+  opacity: 1;
+}
+.benefits-carousel__bullet-item.active {
+  background: #7b8994;
+  cursor: default;
+}
+.benefits-carousel__arrow {
+  position: relative;
+  left: 150px;
+  cursor: pointer
+}
