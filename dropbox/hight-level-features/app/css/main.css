@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #47525d; }
+
+.hight-level-features__list-item .hight-level-features__item-image, .hight-level-features__list-item .hight-level-features__item-copy {
+  vertical-align: middle; }
+
+.hight-level-features {
+  padding: 50px 20px 40px;
+  text-align: center; }
+  .hight-level-features .hight-level-features__headline {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 0 20px 0; }
+  .hight-level-features .hight-level-features__copy {
+    margin: 0 0 30px 0;
+    line-height: 21px; }
+  .hight-level-features .hight-level-features__list {
+    max-width: 270px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    text-align: left; }
+
+.hight-level-features__list-item {
+  margin-bottom: 20px; }
+  .hight-level-features__list-item .hight-level-features__item-image {
+    width: 15%;
+    margin-right: 10%;
+    display: inline-block; }
+  .hight-level-features__list-item .hight-level-features__item-copy {
+    display: inline-block;
+    width: 65%; }
+
+@media (min-width: 768px) {
+  .hight-level-features {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap; }
+    .hight-level-features .hight-level-features__headline {
+      font-size: 28px;
+      margin-bottom: 60px; }
+    .hight-level-features .hight-level-features__copy {
+      font-size: 18px;
+      line-height: 30px;
+      order: 3; }
+    .hight-level-features .hight-level-features__list {
+      text-align: center;
+      order: 2;
+      display: flex;
+      max-width: none;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 30px; }
+      .hight-level-features .hight-level-features__list .hight-level-features__list-item {
+        width: 25%; }
+  .hight-level-features__list-item {
+    margin-bottom: 20px; }
+    .hight-level-features__list-item .hight-level-features__item-image {
+      width: 57px;
+      margin: 0; }
+    .hight-level-features__list-item .hight-level-features__item-copy {
+      display: block;
+      width: 100%;
+      line-height: 24px;
+      font-weight: normal;
+      margin-top: 25px; } }
