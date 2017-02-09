@@ -1,0 +1,64 @@
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+<div ng-include src="'app/modules/admin/views/main.html'"></div>
+
+<div ng-controller = "AdminAssignmentController" class="body-info-admin" id="marginfrom">
+  <h2 align="center" style=" text-transform: uppercase;font-size:30px">Job list</h2>
+  <div class="table-responsive">
+    <div align="right" style="float: right;margin-right: 15px; font-weight: 500;">
+      <a ng-click="newJob()">
+        <img src="assets/images/add.gif" border="0" alt="New Company">&nbsp;Add
+      </a>
+    </div>
+    <form class="form-inline">
+      <div class="form-group">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" ng-model="search" class="form-control" placeholder="Search" ng-change="setSearch()" style="width:300px; margin-bottom: 5px;">
+      </div>
+    </form>
+    <table ng-activity-indicator class="table table-striped" style="border: 1px solid #ccc">
+    <thead>
+      <tr style="border-bottom: 2px solid rgb(6,122,171); color: rgb(30,140,180); background-color: lightblue;">
+        <th class="employer" width="4%">#</th>
+        <th class="employer" with="20%">Name</th>
+        <th class="employer" width="28%">Description</th>
+        <th class="employer" width="20%">Company</th>
+        <th class="employer" width="10%">State</th>
+        <th class="employer" width="10%">Deadline</th>
+        <th class="employer" width="4%"><span style="position: relative;float: left;"></span> </th>
+        <th ng-if="userAdmin.role == 'admin'" class="employer" width="4%"><span style="position: relative;float: right;"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="assign in (list = (listAssignment | filter:search | orderBy:'-id')).slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+        <td>{{assign.index}}</td>
+        <td>{{assign.name}}</td>
+        <td style=" overflow: hidden"><div style="text-overflow: ellipsis; width: 300px; overflow: hidden;white-space: nowrap; ">{{assign.description | htmlToPlaintext}}</div></td>
+        <td>{{assign.company}}</td>
+        <td>{{assign.approved?'Approved':'Pending'}}</td>
+        <td>{{assign.deadline}}</td>
+        <td style="padding: 2px 15px;">
+            <a style="cursor:pointer"  aria-hidden="true" ng-click="detailAssignment(assign)">Detail</a>
+        </td>
+        <td ng-if="userAdmin.role == 'admin'" style="padding: 2px 15px;">
+          <a style="cursor:pointer" ng-if="!assign.approved" ng-click="approveAssign(assign)">Approve</a>
+          <span style="cursor:default" ng-if="assign.approved" >Approve</span>
+        </td>
+       
+      </tr>   
+    </tbody>
+  </table>
+  <div align="right" style="font-size: 14px;">
+      Page 
+    <select ng-init="viewby = 6" ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+      <option>5</option>
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+      <option>30</option>
+      <option>40</option>
+      <option>50</option>
+    </select>   <br>
+    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" style="font-weight:500;" boundary-links="true" num-pages="numPages" rotate="false" items-per-page="itemsPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>"></uib-pagination>
+    </div>
+  </div>
+</div>

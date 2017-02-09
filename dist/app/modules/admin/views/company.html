@@ -1,0 +1,55 @@
+<div ng-include src="'app/modules/admin/views/main.html'"></div>
+<div  ng-controller="AdminCompanyController" class="body-info-admin" id="marginfrom">   
+  <h2 align="center">Company</h2>
+  <div class="table-responsive">
+    
+    <div ng-if="userAdmin.role == 'admin'" align="right" style="float: right;margin-right: 15px; font-weight: 500; cursor: pointer;">
+      <a ng-click="newCompany()">
+        <img src="assets/images/add.gif" border="0" alt="New Company">&nbsp;Add
+      </a>
+    </div>
+    <form class="form-inline">
+      <div class="form-group">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input type="text" ng-model="search" class="form-control" placeholder="Search" ng-change="setSearch()" style="width:300px; margin-bottom: 5px;">
+      </div>
+    </form>
+    <table  class="table table-striped">
+      <thead>
+        <tr style="border-bottom: 2px solid rgb(6,122,171); color: rgb(30,140,180);">
+          <th >#</th>
+          <th >Title</th>
+          <th >License</th>
+          <th style="text-align: center">Email Used</th>
+          <th style="text-align: center">Point</th>
+          <th >Expire date</th>
+          <th ng-if="userAdmin.role == 'admin'" ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="company in (list = (listCompany|filter:search| orderBy:'-id')).slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+          <td>{{company.id}}</td>
+          <td>{{company.name}}</td>
+          <td>{{company.license}}</td>
+          <td style="text-align: center">{{company.used}}</td>
+          <td style="text-align: center">{{company.point}}</td>
+          <td>{{company.licenseExpire}}</td>
+          <td ng-if="userAdmin.role == 'admin'" ng-click="editCompany(company)"><a aria-hidden="true"><img src="assets/images/edit.gif" border="0" alt="Edit Company"></a></td>
+        </tr>   
+      </tbody>
+    </table>
+    <div align="right" style="font-size: 14px;">
+      {{"employer.assignment.choosepage" | translate}} 
+      <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+      </select>  {{"employer.assignment.onepage" | translate}} . <br>
+      <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" style="font-weight:500;" boundary-links="true" num-pages="numPages" rotate="false" items-per-page="itemsPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>"></uib-pagination>
+    </div>
+  </div>
+</div>

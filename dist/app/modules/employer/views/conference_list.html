@@ -1,0 +1,55 @@
+<div ng-include src="'app/modules/employer/views/menu.html'"></div>
+
+<div class="body-info-employer" id="marginfrom">
+  <div align="center" class="headtitle">{{"employer.conference.meetinglist" | translate}}</div>
+    <form class="form-inline">
+        <div class="form-group has-feedback">
+            <input type="text" ng-model="search" class="form-control" placeholder='{{"employer.conference.searchlist" | translate}}'ng-change="totalItems=list.length" style="width:300px; margin-bottom: 5px;">
+             <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+    </form>
+    <div class="table-responsive">
+      
+      <table class="table table-striped" style="border: 1px solid #ccc">
+        <thead>
+          <tr style="border-bottom: 2px solid rgb(6,122,171); color: rgb(30,140,180); background-color: lightblue;">
+            <th class="cell-align employer" width="3%">#</th>
+            <th class="cell-align employer" with="25%">{{"employer.conference.job" | translate}}</th>
+            <th class="cell-align employer" width="13%">{{"employer.conference.interview" | translate}}</th>
+            <th class="cell-align employer" width="21%">{{"employer.conference.candidate" | translate}}</th>
+            <th class="cell-align employer" width="15%">{{"employer.conference.schedule" | translate}}</th>
+            <th class="cell-align employer" width="12%"><span style="position: relative;float: left;">{{"employer.conference.status" | translate}}</span> </th>
+            <th class="cell-align employer" width="8%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="meeting in  (list = (listConference | filter:search | orderBy:'-id')).slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+            <td>{{$index+1}}</td>
+            <td>{{meeting.job}}</td>
+            <td>{{meeting.interview}}</td>
+            <td>{{meeting.candidate}}</td>
+            <td>{{meeting.schedule}}</td>
+            <td>{{meeting.status | translate}}</td>
+            <td style="padding: 2px 15px;">
+              <button class="btn btn-success" ng-show="meeting.status!='ended'" ng-click="launchConference(meeting)" aria-hidden="true">{{"employer.conference.launch" | translate}} </button>
+            </td>
+           
+          </tr>   
+        </tbody>
+      </table>
+      <div align="right" style="font-size: 14px;">
+      {{"employer.conference.choosepage" | translate}} 
+      <select ng-init="itemsPerPage = 6" ng-model="itemsPerPage" ng-change="currentPage=1">
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+      </select>  {{"employer.conference.onepage" | translate}} . <br>
+      <uib-pagination ng-init="currentPage=1" total-items="totalItems" ng-model="currentPage" max-size="5" class="pagination-sm" style="font-weight:500;" boundary-links="true" num-pages="numPages" rotate="false" items-per-page="itemsPerPage" first-text="<<" previous-text="<" next-text=">" last-text=">>"></uib-pagination>
+      </div>
+    </div>
+</div>
+<div ng-include src="'app/modules/employer/views/footer.html'"  align="center" class="footer-employer" ></div>

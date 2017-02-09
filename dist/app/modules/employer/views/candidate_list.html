@@ -1,0 +1,177 @@
+<div ng-include src="'app/modules/employer/views/menu.html'"></div>
+<div class="container-employer" id="marginfrom">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<div class="headtitle">{{"candidate.searchCandidate" | translate}}</div>
+		</div>
+	</div>
+	<!-- Start search form -->	
+	<form class="row search-form">
+		<div class="col-sm-10">
+			<div class="row">
+				<div class="form-group col-sm-3">
+					<input type="text" class="form-control" placeholder='{{"employer.keysearch" | translate}}' ng-model="search.options.keyword">
+				</div>
+				
+				<div class="form-group col-sm-3">
+					<select class="form-control options" 
+			            id="province-list"
+			            ng-model="provinces.selectedProvince"
+			            ng-options="province.title for province in provinces.availableProvinces track by province.id"
+			            ng-change="searchCandidate()">
+			        </select>
+				</div>
+
+				<div class="form-group col-sm-3">
+					<select class="form-control options" name="singleSelect"
+						ng-model="positions.seletedPosition"
+						ng-change="searchCandidate()">
+						<option value="">{{"employee.searchPostions" | translate}}</option>
+						<option value="{{ position.id }}" ng-repeat="position in positions.availabePositions">{{ position.title }}</option>
+					</select>
+				</div>
+				<div class="form-group col-sm-3">
+					<select class="form-control options" name="singleSelect" ng-model="search.options.categoryId" ng-change="searchCandidate()">
+						<option value="">{{"employee.searchCategories" | translate}}</option>
+						<option value="{{ category.id }}" ng-repeat="category in categoriesList">{{ category.title }}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group col-sm-2">
+			<button type="button" class="btn btn-blue btn-search" ng-click="searchCandidate()">
+			<b>{{"employer.assignment.search" | translate}}</b></button>
+		</div>
+	</form>
+	<div class="row" ng-if="!searching">
+		<div class="col-sm-12">
+			<h2><span class="red">{{ totalCandidates | number }}</span> {{"employer.totalcv" | translate}}</h2>
+		</div>
+	</div><!-- End search form -->
+
+	<!-- Start new candidate -->
+	<div class="row" ng-if="!searching">
+		<div class="col-sm-12 new-candidate">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs init-tab" role="tablist">
+				<li role="presentation" class="active active-candidate"><a aria-controls="home" role="tab" data-toggle="tab">{{"candidate.new" | translate}}</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content init-content">
+				<div role="tabpanel" class="tab-pane active" id="new-candidate">
+					<table class="table table-hover table-new-candidate">
+						<thead>
+							<tr>
+								<th class="text-center cell-align" style="width: 5%;">#</th>
+								<th class="cell-align" style="width: 20%;">{{ "employee.applyName" | translate }}</th>
+								<th class="text-center cell-align" style="width: 5%;">CV</th>
+								<th class="cell-align" style="width: 25%;">{{"employee.address" | translate}}</th>
+								<th class="cell-align" style="width: 30%;">{{"employee.major" | translate}}</th>
+								<th class="cell-align" style="width: 10%;">{{"employer.conference.status" | translate}}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="candidate in candidateListPagination">
+								<td class="text-center">{{ $index + (currPage - 1)*itemsPerPage + 1 }}</td>
+								<td><a ng-click="openModalCvCandidate(candidate)" style="cursor:pointer">{{ candidate.fullname }}</a></td>
+								<td class="text-center">
+									<button ng-click="openModalCvCandidate(candidate)" class="btn btn-default"><i class="fa fa-eye" aria-hidden="true"></i></button>
+								</td>
+								<td>
+									<span ng-if="candidate.provinceId
+									&& candidate.countryId">{{ candidate.provinceName + ', ' + candidate.countryName }}
+									</span>
+								</td>
+								<td>
+									<span ng-repeat="category in candidate.categories" class="alert alert-info alert-sm">
+										{{ category.title }}
+									</span>						
+								</td>
+								<td>
+									<span ng-if="candidate.viewed">{{"employee.statusCV" | translate}}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div><!-- End new job -->
+
+	<!-- Start search --> 
+	<div class="row" ng-if="searching">
+		<div class="col-sm-12" ng-if="(totalCandidates > 0) && resultSearch">
+			<div class="row result-title">
+				<div class="col-sm-8 col-md-10">
+					<h2><span class="red">{{ totalCandidates }}</span> {{"employer.numbercv" | translate}}</h2>
+				</div>
+				<div class="col-sm-4 col-md-2">
+					<select 
+			          class="form-control" 
+			          style="margin-top: 20px;"
+			          ng-model="optionNumbers.selectedNumber" 
+			          ng-options="number.lable for number in optionNumbers.availableNumbers track by number.id" 
+			          ng-change="changeItemsPerPage()">
+			        </select>
+				</div>
+			</div>
+			<table class="table table-bordered table-hover table-candidate">
+				<thead>
+					<tr>
+						<th class="text-center" style="width: 5%;">#</th>
+						<th style="width: 20%;">{{ "employee.applyName" | translate }}</th>
+						<th class="text-center" style="width: 5%;">CV</th>
+						<th style="width: 25%;">{{"employee.address" | translate}}</th>
+						<th style="width: 30%;">{{"employee.major" | translate}}</th>
+						<th style="width: 10%;">{{"employer.conference.status" | translate}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="candidate in candidateListPagination">
+						<td class="text-center">{{ $index + (currPage - 1)*itemsPerPage + 1 }}</td>
+						<td><a ng-click="openModalCvCandidate(candidate)" style="cursor:pointer">{{ candidate.fullname }}</a></td>
+						<td class="text-center">
+							<button ng-click="openModalCvCandidate(candidate)" class="btn btn-default"><i class="fa fa-eye" aria-hidden="true"></i></button>
+						</td>
+						<td>
+							<span ng-if="candidate.provinceId
+									&& candidate.countryId">{{ candidate.provinceName + ', ' + candidate.countryName }}
+							</span>
+						</td>
+						<td>
+							<span ng-repeat="category in candidate.categories" class="alert alert-info alert-sm">
+								{{ category.title }}
+							</span>						
+						</td>
+						<td>
+							<span ng-if="candidate.viewed">{{"employee.statusCV" | translate}}</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="text-center container-pagination" ng-if="(totalCandidates/itemsPerPage) > 1">
+				<ul class="pagination" 
+					uib-pagination 
+					total-items="totalCandidates" 
+					ng-model="currPage" 
+					max-size="maxSize"
+					items-per-page="itemsPerPage"
+					num-pages="numPages"
+					first-text = "&laquo;" 
+					last-text = "&raquo;"
+					previous-text = "&lsaquo;"
+					next-text = "&rsaquo;"
+					ng-change = "changePage(currPage)" 
+					boundary-links="true" 
+					force-ellipses="true"></ul>
+			</div>
+		</div>
+		<div class="col-sm-12" ng-if="!resultSearch">
+			<h2>{{"employer.zerocv" | translate}}</h2>			
+		</div>
+	</div><!-- End search -->
+</div>
+<div ng-include="'app/modules/employer/modals/modalCvCandidateView.html'"></div>
+<div ng-include="'app/modules/employer/views/footer.html'" class="text-center footer-employer"></div>
